@@ -1,10 +1,11 @@
 import React from "react";
 import Formm from "../Form/Form";
-import Post from "../Posts/Post/Post";
+import Slide from "../pages/Slide";
 import Posts from "../Posts/Posts";
 const Home = () => {
   return (
     <div>
+      <Slide />
       <Posts />
     </div>
   );
