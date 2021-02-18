@@ -5,12 +5,7 @@ import bodyParser from "body-parser";
 
 import postRoutes from "./routes/posts.js";
 import authRouter from "./routes/auth.js";
-app.use(express.static(path.join(__dirname, 'build')));
 
-
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 const app = express();
 //middlewar
 //app.use(express.json());
