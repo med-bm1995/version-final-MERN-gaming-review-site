@@ -20,6 +20,15 @@ app.use(
 app.use("/posts", postRoutes);
 // Use routes
 app.use("/api/auth", authRouter);
+//herku
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  });
+}
+
 //sa3at t5del ki tna7it /api/auth trodha / kahw
 //taile mta3 l image matfoutech 30 mb w Url zeda
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
